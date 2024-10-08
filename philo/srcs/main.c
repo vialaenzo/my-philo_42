@@ -6,7 +6,7 @@
 /*   By: eviala <eviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 13:15:11 by eviala            #+#    #+#             */
-/*   Updated: 2024/10/07 14:52:51 by eviala           ###   ########.fr       */
+/*   Updated: 2024/10/08 12:20:35 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,8 @@ int	main(int argc, char **argv)
 		return (ft_error(ARGS2));
 	if (!data_init(&data, argv, argc))
 		return (ft_error(MALLOC));
-	philo_tab(&data);
+	if (philo_tab(&data) == 0)
+		return (ft_error(THREAD));
 	if (data.nb_philos == 1)
 		return (alone_philo(&data), 0);
 	if (pthread_create(&data.monitor_thread, NULL, monitor_routine, &data) != 0)

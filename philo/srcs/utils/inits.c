@@ -6,7 +6,7 @@
 /*   By: eviala <eviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:45:36 by eviala            #+#    #+#             */
-/*   Updated: 2024/10/07 15:04:03 by eviala           ###   ########.fr       */
+/*   Updated: 2024/10/08 12:19:45 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ int	data_init(t_data *data, char **argv, int argc)
 void	philo_tab(t_data *data)
 {
 	t_philo	*philo;
-	int		i;
 
-	i = -1;
+	int (i) = -1;
 	while (++i < data->nb_philos)
 	{
 		philo = &data->philos[i];
@@ -53,6 +52,8 @@ void	philo_tab(t_data *data)
 		philo->index_tab = i;
 		philo->data = data;
 		philo->fork_left = malloc(sizeof(pthread_mutex_t));
+		if (!philo->fork_left)
+			return (0);
 		pthread_mutex_init(philo->fork_left, NULL);
 	}
 	i = -1;
@@ -61,4 +62,5 @@ void	philo_tab(t_data *data)
 		data->philos[i].fork_right = data->philos[i + 1].fork_left;
 	}
 	data->philos[i].fork_right = data->philos[0].fork_left;
+	return (1);
 }

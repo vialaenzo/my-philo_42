@@ -6,7 +6,7 @@
 /*   By: eviala <eviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:17:17 by eviala            #+#    #+#             */
-/*   Updated: 2024/10/07 15:07:42 by eviala           ###   ########.fr       */
+/*   Updated: 2024/10/08 12:14:56 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,9 @@ void	*td_routine(void *args)
 {
 	t_philo *(philo) = (t_philo *)args;
 	t_data *(data) = philo->data;
-	if (philo->index_tab % 2)
-		ft_usleep(10, data);
+	if (data->nb_philos % 2 && philo->index_tab == data->nb_philos - 1)
+		ft_usleep(data->time_te, data);
+	
 	while (1)
 	{
 		if (is_dead(philo))
@@ -69,6 +70,7 @@ void	*td_routine(void *args)
 		if (is_dead(philo))
 			return (NULL);
 		print_status(philo, "is thinking");
+		ft_usleep(3, data);
 	}
 	return (NULL);
 }
