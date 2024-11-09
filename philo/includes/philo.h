@@ -6,7 +6,7 @@
 /*   By: eviala <eviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:44:38 by eviala            #+#    #+#             */
-/*   Updated: 2024/10/08 12:19:02 by eviala           ###   ########.fr       */
+/*   Updated: 2024/10/09 09:39:12 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,6 @@ void					ft_usleep(long long time, t_data *data);
 long long				time_diff(long long past, long long pres);
 int						is_satieted(t_data *data);
 int						data_init(t_data *data, char **argv, int argc);
-int					philo_tab(t_data *data);
+int						philo_tab(t_data *data);
 
 #endif

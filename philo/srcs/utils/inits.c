@@ -6,7 +6,7 @@
 /*   By: eviala <eviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:45:36 by eviala            #+#    #+#             */
-/*   Updated: 2024/10/08 12:19:45 by eviala           ###   ########.fr       */
+/*   Updated: 2024/10/09 09:41:12 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	data_init(t_data *data, char **argv, int argc)
 	return (1);
 }
 
-void	philo_tab(t_data *data)
+int	philo_tab(t_data *data)
 {
 	t_philo	*philo;
 

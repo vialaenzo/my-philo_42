@@ -6,7 +6,7 @@
 /*   By: eviala <eviala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:17:17 by eviala            #+#    #+#             */
-/*   Updated: 2024/10/08 12:14:56 by eviala           ###   ########.fr       */
+/*   Updated: 2024/10/09 09:39:41 by eviala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	*td_routine(void *args)
 	t_data *(data) = philo->data;
 	if (data->nb_philos % 2 && philo->index_tab == data->nb_philos - 1)
 		ft_usleep(data->time_te, data);
-	
 	while (1)
 	{
 		if (is_dead(philo))
